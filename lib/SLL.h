@@ -17,7 +17,8 @@ class list {
 	}
 	void createnode(struct peer, bool active);
 	void display();
-
+	void insert_start(struct peer, bool active);
+	void insert_end(struct peer, bool active);
 };
 
 #endif
