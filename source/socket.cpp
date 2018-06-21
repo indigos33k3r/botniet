@@ -2,7 +2,7 @@
 #include "lib/SLL.h"
 
 #ifdef __linux__
-#include <socket.h>
+#include <sys/socket.h>
 
 int socket::init() {
 	sock = socket(PF_INET, SOCK_DGRAM, 0);
