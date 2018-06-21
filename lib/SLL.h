@@ -7,11 +7,11 @@ struct node {
 	node *next;
 };
 
-class list {
+class SLL {
 	private:
 	node *head, *tail;
 	public:
-	list();
+	SLL();
 	void createnode(struct peer, bool active);
 	void display();
 	void insert_start(struct peer, bool active);

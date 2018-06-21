@@ -7,12 +7,12 @@ using namespace std;
 
 #include "lib/SLL.h"
 
-list::list() {
+SLL::SLL() {
 	head=NULL;
 	tail=NULL;
 }
 
-void list::createnode(struct peer, bool active) {
+void SLL::createnode(struct peer, bool active) {
 	node *temp = new node;
 	temp->addr = peer;
 	temp->active = active;
@@ -27,7 +27,7 @@ void list::createnode(struct peer, bool active) {
 	}
 }
 
-const char *list::display() {
+const char *SLL::display() {
 	node *temp = new node;
 	temp = head;
 	ret = "";
@@ -51,7 +51,7 @@ const char *list::display() {
 	return ret;
 }
 
-void list::insert_start(struct peer, bool active) {
+void SLL::insert_start(struct peer, bool active) {
 	node *temp = new node;
 	temp->raddr = peer;
 	temp->active = active;
@@ -59,7 +59,7 @@ void list::insert_start(struct peer, bool active) {
 	head = temp;
 }
 
-void list::insert_end(struct peer, bool active) {
+void SLL::insert_end(struct peer, bool active) {
 	node *temp = new node;
 	temp->addr = peer;
 	temp->active = active;
@@ -67,7 +67,7 @@ void list::insert_end(struct peer, bool active) {
 	tail = temp;
 }
 
-void list::insert_position(int pos, struct peer, bool active) {
+void SLL::insert_position(int pos, struct peer, bool active) {
 	node *pre = new node;
 	node *cur = new node;
 	node *temp = new node;
@@ -82,14 +82,14 @@ void list::insert_position(int pos, struct peer, bool active) {
 	temp->next = cur;
 }
 
-void list::delete_first() {
+void SLL::delete_first() {
 	node *temp = new node;
 	temp = head;
 	head = temp->next;
 	delete temp;
 }
 
-void list::delete_last() {
+void SLL::delete_last() {
 	node *pre = new node;
 	node *cur = new node;
 	cur = head;
@@ -102,7 +102,7 @@ void list::delete_last() {
 	delete cur;
 }
 
-void list::delete_position(int pos) {
+void SLL::delete_position(int pos) {
 	node *pre = new node;
 	node *cur = new node;
 	cur = head;

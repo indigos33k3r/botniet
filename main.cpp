@@ -6,6 +6,8 @@ using namespace std;
 #include "lib/network.h"
 
 int main(int argc, char* argv[]) {
+	network = new network;
 	
+	return 0;
 }
 

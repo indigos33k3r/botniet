@@ -1,5 +1,4 @@
 #include "lib/socket.h"
-#include "lib/SLL.h"
 
 #ifdef __linux__
 #include <sys/socket.h>
@@ -7,14 +6,13 @@
 int socket::init() {
 	sock = socket(PF_INET, SOCK_DGRAM, 0);
 	if (sock == -1) {
-		return 0;
+		return 1;
 	}
-	list peers;
-	return 1;
+	return 0;
 }
 
-int socket::addPeer(const char *addr, uint16_t port) {
-	peers.
+int socket::bindPeer(struct peerAddr) {
+	
 }
 
 #elif _WIN32

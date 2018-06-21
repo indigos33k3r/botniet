@@ -6,11 +6,9 @@ class socket {
 	int sock;
 	struct sockaddr_in;
 	public:
-	list
-	
 	int init();
-	int addPeer(const char *addr, uint16_t port);
+	int bindPeer(struct peerAddr);
 };
 
-#endif SOCK_H
+#endif
 

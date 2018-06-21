@@ -4,7 +4,7 @@ using namespace std;
 
 #include "lib/SLL.h"
 
-int main(int argc, char *argv[]) {
+void SLL_test() {
 	list SLL;
 	SLL.createnode(25);
 	SLL.createnode(50);
@@ -45,6 +45,10 @@ int main(int argc, char *argv[]) {
 	SLL.delete_position(4);
 	cout << SLL.display() << endl;
 	cout<<"\n--------------------------------------------------\n";
+}
+
+int main(int argc, char *argv[]) {
+	SLL_test();
 	return 0;
 }
 
