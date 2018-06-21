@@ -2,7 +2,7 @@
 #define SLL_H
 
 struct node {
-	struct peeraddr;
+	struct addr;
 	bool active;
 	node *next;
 };
@@ -11,14 +11,15 @@ class list {
 	private:
 	node *head, *tail;
 	public:
-	list() {
-		head=NULL;
-		tail=NULL;
-	}
+	list();
 	void createnode(struct peer, bool active);
 	void display();
 	void insert_start(struct peer, bool active);
 	void insert_end(struct peer, bool active);
+	void insert_position(struct peer, bool active);
+	void delete_first();
+	void delete_last();
+	void delete_position(int pos);
 };
 
 #endif
