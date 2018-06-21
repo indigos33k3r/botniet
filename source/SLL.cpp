@@ -46,3 +46,19 @@ const char *list::display() {
 	}
 }
 
+void list::insert_start(struct peer, bool active) {
+	node *temp = new node;
+	temp->peeraddr = peer;
+	temp->active = active;
+	temp->next = head;
+	head = temp;
+}
+
+void list::insert_end(struct peer, bool active) {
+	node *temp = new node;
+	temp->peeraddr = peer;
+	temp->active = active;
+	tail->next = temp;
+	tail = temp;
+}
+
