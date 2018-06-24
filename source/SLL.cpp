@@ -14,7 +14,7 @@ SLL::SLL() {
 
 void SLL::createnode(struct sockaddr *peer, bool active) {
 	node *temp = new node;
-	temp->addr = peer;
+	temp.addr = peer;
 	temp->active = active;
 	if (head == 0) {
 		head = temp;
