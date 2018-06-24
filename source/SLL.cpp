@@ -12,7 +12,7 @@ SLL::SLL() {
 	tail = 0;
 }
 
-void SLL::createnode(struct *peer, bool active) {
+void SLL::createnode(struct sockaddr *peer, bool active) {
 	node *temp = new node;
 	temp->addr = peer;
 	temp->active = active;
@@ -51,7 +51,7 @@ const char *SLL::display() {
 	return ret;
 }
 
-void SLL::insert_start(struct *peer, bool active) {
+void SLL::insert_start(struct sockaddr *peer, bool active) {
 	node *temp = new node;
 	temp->addr = peer;
 	temp->active = active;
@@ -59,7 +59,7 @@ void SLL::insert_start(struct *peer, bool active) {
 	head = temp;
 }
 
-void SLL::insert_end(struct *peer, bool active) {
+void SLL::insert_end(struct sockaddr *peer, bool active) {
 	node *temp = new node;
 	temp->addr = peer;
 	temp->active = active;
@@ -67,7 +67,7 @@ void SLL::insert_end(struct *peer, bool active) {
 	tail = temp;
 }
 
-void SLL::insert_position(int pos, struct *peer, bool active) {
+void SLL::insert_position(int pos, struct sockaddr *peer, bool active) {
 	node *pre = new node;
 	node *cur = new node;
 	node *temp = new node;
