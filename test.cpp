@@ -6,7 +6,7 @@ using namespace std;
 
 void SLL_test() {
 	list SLL;
-	SLL.createnode(25);
+	SLL.createnode();
 	SLL.createnode(50);
 	SLL.createnode(90);
 	SLL.createnode(40);

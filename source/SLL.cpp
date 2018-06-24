@@ -12,7 +12,7 @@ SLL::SLL() {
 	tail = 0;
 }
 
-void SLL::createnode(struct peer, bool active) {
+void SLL::createnode(struct *peer, bool active) {
 	node *temp = new node;
 	temp->addr = peer;
 	temp->active = active;
@@ -27,25 +27,25 @@ void SLL::createnode(struct peer, bool active) {
 	}
 }
 
-const char SLL::display() {
+const char *SLL::display() {
 	node *temp = new node;
 	temp = head;
-	ret = "";
+	const char *ret = "";
 #ifdef __DEBUG__
-	cout << inet_ntoa(temp->peeraddr.sin_addr.s_addr) << ":" << temp->peeraddr.sin_port;
+	cout << inet_ntoa(temp->addr.sin_addr.s_addr) << ":" << temp->addr.sin_port;
 #endif
-	strcat(ret, inet_ntoa(temp->peeraddr.sin_addr.s_addr));
+	strcat(ret, inet_ntoa(temp->addr.sin_addr.s_addr));
 	strcat(ret, ":");
-	strcat(ret, temp->peeraddr.sin_port);
+	strcat(ret, temp->addr.sin_port);
 	temp = temp->next;
 	while (temp != 0) {
 #ifdef __DEBUG__
-		cout << " " << inet_ntoa(temp->peeraddr.sin_addr.s_addr) << ":" << temp->peeraddr.sin_port;
+		cout << " " << inet_ntoa(temp->addr.sin_addr.s_addr) << ":" << temp->addr.sin_port;
 #endif
 		strcat(ret, " ");
-		strcat(ret, inet_ntoa(temp->peeraddr.sin_addr.s_addr));
+		strcat(ret, inet_ntoa(temp->addr.sin_addr.s_addr));
 		strcat(ret, ":");
-		strcat(ret, temp->peeraddr.sin_port);
+		strcat(ret, temp->addr.sin_port);
 		temp = temp->next;
 	}
 	return ret;
@@ -53,7 +53,7 @@ const char SLL::display() {
 
 void SLL::insert_start(struct peer, bool active) {
 	node *temp = new node;
-	temp->raddr = peer;
+	temp->addr = peer;
 	temp->active = active;
 	temp->next = head;
 	head = temp;

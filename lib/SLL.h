@@ -13,7 +13,7 @@ class SLL {
 	public:
 	SLL();
 	void createnode(struct peer, bool active);
-	const char display();
+	const char *display();
 	void insert_start(struct peer, bool active);
 	void insert_end(struct peer, bool active);
 	void insert_position(struct peer, bool active);
