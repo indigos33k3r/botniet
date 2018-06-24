@@ -1,8 +1,8 @@
 #include <thread>
 
-#include "lib/botniet.h"
-#include "lib/socket.h"
-#include "lib/SLL.h"
+#include "../lib/botniet.h"
+#include "../lib/socket.h"
+#include "../lib/SLL.h"
 
 using namespace std;
 

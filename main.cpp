@@ -3,7 +3,7 @@
 #endif
 #include <thread>
 
-#include "lib/network.h"
+#include "../lib/network.h"
 
 using namespace std;
 

@@ -1,4 +1,4 @@
-#include "lib/socket.h"
+#include "../lib/socket.h"
 
 #ifdef __linux__
 #include <sys/socket.h>

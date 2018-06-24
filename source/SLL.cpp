@@ -3,9 +3,9 @@
 using namespace std;
 #endif
 
-#import <arpa/inet.h>
+#include <arpa/inet.h>
 
-#include "lib/SLL.h"
+#include "../lib/SLL.h"
 
 SLL::SLL() {
 	head = NULL;
