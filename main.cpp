@@ -1,9 +1,11 @@
 #ifdef __DEBUG__
 #include <iostream>
-using namespace std;
 #endif
+#include <thread>
 
 #include "lib/network.h"
+
+using namespace std;
 
 int main(int argc, char* argv[]) {
 	network = new network;

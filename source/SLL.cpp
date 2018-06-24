@@ -8,8 +8,8 @@ using namespace std;
 #include "lib/SLL.h"
 
 SLL::SLL() {
-	head=NULL;
-	tail=NULL;
+	head = NULL;
+	tail = NULL;
 }
 
 void SLL::createnode(struct peer, bool active) {

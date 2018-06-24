@@ -5,14 +5,26 @@
 
 int socket::init() {
 	sock = socket(PF_INET, SOCK_DGRAM, 0);
-	if (sock == -1) {
-		return 1;
-	}
+	if (sock == -1)
+		return 1
+	tcp_sock = socket(PF_INET, SOCK_DGRAM, 0);
+	if (sock == -1)
+		return 1
 	return 0;
 }
 
-int socket::bindPeer(struct peerAddr) {
-	
+int socket::bindPeer(node *peer) {
+	for (int i; i < RETRY_LIMIT; i++) {
+		if (bind(sock, (struct sockaddr *)&peer->addr, sizeof(peer->addr)) < 0)
+			continue;
+		else
+			break;
+	}
+	peer->active = 1;
+}
+
+void socket::close() {
+	close(sock)
 }
 
 #elif _WIN32
