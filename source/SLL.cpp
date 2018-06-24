@@ -12,7 +12,7 @@ SLL::SLL() {
 	tail = 0;
 }
 
-void SLL::createnode(struct *peer, bool active) {
+void SLL::createnode(struct sockaddr *peer, bool active) {
 	node *temp = new node;
 	temp->addr = peer;
 	temp->active = active;
