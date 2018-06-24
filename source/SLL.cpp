@@ -8,18 +8,18 @@ using namespace std;
 #include "../lib/SLL.h"
 
 SLL::SLL() {
-	head = NULL;
-	tail = NULL;
+	head = 0;
+	tail = 0;
 }
 
 void SLL::createnode(struct peer, bool active) {
 	node *temp = new node;
 	temp->addr = peer;
 	temp->active = active;
-	if (head == NULL) {
+	if (head == 0) {
 		head = temp;
 		tail = temp;
-		temp = NULL;
+		temp = 0;
 	}
 	else {
 		tail->next = temp;
@@ -27,7 +27,7 @@ void SLL::createnode(struct peer, bool active) {
 	}
 }
 
-const char *SLL::display() {
+const char SLL::display() {
 	node *temp = new node;
 	temp = head;
 	ret = "";
@@ -38,7 +38,7 @@ const char *SLL::display() {
 	strcat(ret, ":");
 	strcat(ret, temp->peeraddr.sin_port);
 	temp = temp->next;
-	while (temp != NULL) {
+	while (temp != 0) {
 #ifdef __DEBUG__
 		cout << " " << inet_ntoa(temp->peeraddr.sin_addr.s_addr) << ":" << temp->peeraddr.sin_port;
 #endif
@@ -93,12 +93,12 @@ void SLL::delete_last() {
 	node *pre = new node;
 	node *cur = new node;
 	cur = head;
-	while (cur->next != NULL) {
+	while (cur->next != 0) {
 		pre = cur;
 		cur = cur->next;
 	}
 	tail = pre;
-	pre->next = NULL;
+	pre->next = 0;
 	delete cur;
 }
 

@@ -1,6 +1,7 @@
 #include <thread>
 
 #include "../lib/botniet.h"
+#include "../lib/network.h"
 #include "../lib/socket.h"
 #include "../lib/SLL.h"
 
