@@ -4,7 +4,7 @@
 #include <sys/socket.h>
 
 struct node {
-	struct sockaddr addr;
+	struct sockaddr *addr;
 	bool active;
 	node *next;
 };
