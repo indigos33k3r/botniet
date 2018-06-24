@@ -1,8 +1,10 @@
 #ifndef SLL_H
 #define SLL_H
 
+#include <sys/socket.h>
+
 struct node {
-	struct addr;
+	struct sockaddr addr;
 	bool active;
 	node *next;
 };

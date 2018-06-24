@@ -15,7 +15,7 @@ int socket::init() {
 
 int socket::bindPeer(node *peer) {
 	for (int i; i < RETRY_LIMIT; i++) {
-		if (bind(sock, (struct sockaddr *)&peer->addr, sizeof(peer->addr)) < 0)
+		if (bind(sock, (struct sockaddr *)&peer.addr, sizeof(peer.addr)) < 0)
 			continue;
 		else
 			break;

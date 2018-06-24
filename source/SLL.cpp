@@ -3,7 +3,9 @@
 using namespace std;
 #endif
 
+#include <sys/socket.h>
 #include <arpa/inet.h>
+#include <string.h>
 
 #include "../lib/SLL.h"
 
