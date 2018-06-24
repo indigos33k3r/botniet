@@ -34,20 +34,20 @@ const char *SLL::display() {
 	temp = head;
 	const char *ret = "";
 #ifdef __DEBUG__
-	cout << inet_ntoa(temp->addr.sin_addr.s_addr) << ":" << temp->addr.sin_port;
+	cout << inet_ntoa(temp->addr->sin_addr.s_addr) << ":" << temp->addr.sin_port;
 #endif
-	strcat(ret, inet_ntoa(temp->addr.sin_addr.s_addr));
+	strcat(ret, inet_ntoa(temp->addr->sin_addr.s_addr));
 	strcat(ret, ":");
-	strcat(ret, temp->addr.sin_port);
+	strcat(ret, temp->addr->sin_port);
 	temp = temp->next;
 	while (temp != 0) {
 #ifdef __DEBUG__
-		cout << " " << inet_ntoa(temp->addr.sin_addr.s_addr) << ":" << temp->addr.sin_port;
+		cout << " " << inet_ntoa(temp->addr->sin_addr.s_addr) << ":" << temp->addr.sin_port;
 #endif
 		strcat(ret, " ");
-		strcat(ret, inet_ntoa(temp->addr.sin_addr.s_addr));
+		strcat(ret, inet_ntoa(temp->addr->sin_addr.s_addr));
 		strcat(ret, ":");
-		strcat(ret, temp->addr.sin_port);
+		strcat(ret, temp->addr->sin_port);
 		temp = temp->next;
 	}
 	return ret;
