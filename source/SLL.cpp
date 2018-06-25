@@ -74,7 +74,7 @@ void SLL::insert_position(int pos, struct sockaddr *peer, bool active) {
 	node *cur = new node;
 	node *temp = new node;
 	cur = head;
-	for  (int i; i < pos; i++) {
+	for (int i; i < pos; i++) {
 		pre = cur;
 		cur = cur->next;
 	}
