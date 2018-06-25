@@ -13,7 +13,7 @@ class bot_socket {
 	public:
 	int init();
 	int bindPeer(node *peer);
-	void close();
+	void bot_close();
 };
 
 #endif

@@ -1,3 +1,4 @@
+#include "../lib/botniet.h"
 #include "../lib/socket.h"
 #include "../lib/SLL.h"
 
@@ -16,7 +17,7 @@ int bot_socket::init() {
 
 int bot_socket::bindPeer(node *peer) {
 	for (int i; i < RETRY_LIMIT; i++) {
-		if (bind(sock, (struct sockaddr *)&peer.addr, sizeof(peer.addr)) < 0)
+		if (bind(sock, (struct sockaddr *)&peer->addr, sizeof(peer->addr)) < 0)
 			continue;
 		else
 			break;
@@ -24,8 +25,8 @@ int bot_socket::bindPeer(node *peer) {
 	peer->active = 1;
 }
 
-void bot_socket::close() {
-	socket::close(sock);
+void bot_socket::bot_close() {
+	close(sock);
 }
 
 #elif _WIN32
