@@ -11,7 +11,7 @@ network::network() {
 	peers = new SLL;
 	sock = new socket;
 	// TODO: fill sock->sockaddr_in
-	for (int i; i < RETRY_LIMIT; i++) {
+	for (int i = 0; i < RETRY_LIMIT; i++) {
 		if (sock.init == 0)
 			break;
 	}

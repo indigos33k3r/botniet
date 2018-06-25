@@ -16,7 +16,7 @@ int bot_socket::init() {
 }
 
 int bot_socket::bindPeer(node *peer) {
-	for (int i; i < RETRY_LIMIT; i++) {
+	for (int i = 0; i < RETRY_LIMIT; i++) {
 		if (bind(sock, (struct sockaddr *)&peer->addr, sizeof(peer->addr)) < 0)
 			continue;
 		else

@@ -74,7 +74,7 @@ void SLL::insert_position(int pos, struct sockaddr *peer, bool active) {
 	node *cur = new node;
 	node *temp = new node;
 	cur = head;
-	for (int i; i < pos; i++) {
+	for (int i = 0; i < pos; i++) {
 		pre = cur;
 		cur = cur->next;
 	}
@@ -108,7 +108,7 @@ void SLL::delete_position(int pos) {
 	node *pre = new node;
 	node *cur = new node;
 	cur = head;
-	for (int i; i < pos; i++) {
+	for (int i = 0; i < pos; i++) {
 		pre = cur;
 		cur = cur->next;
 	}
