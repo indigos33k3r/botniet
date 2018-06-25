@@ -1,19 +1,20 @@
 #include "../lib/socket.h"
+#include "../lib/SLL.h"
 
 #ifdef __linux__
 #include <sys/socket.h>
 
-int socket::init() {
+int bot_socket::init() {
 	sock = socket(PF_INET, SOCK_DGRAM, 0);
 	if (sock == -1)
-		return 1
+		return 1;
 	tcp_sock = socket(PF_INET, SOCK_DGRAM, 0);
 	if (sock == -1)
-		return 1
+		return 1;
 	return 0;
 }
 
-int socket::bindPeer(node *peer) {
+int bot_socket::bindPeer(node *peer) {
 	for (int i; i < RETRY_LIMIT; i++) {
 		if (bind(sock, (struct sockaddr *)&peer.addr, sizeof(peer.addr)) < 0)
 			continue;
@@ -23,16 +24,25 @@ int socket::bindPeer(node *peer) {
 	peer->active = 1;
 }
 
-void socket::close() {
-	close(sock)
+void bot_socket::close() {
+	close(sock);
 }
 
 #elif _WIN32
 #pragma comment(lib,"Ws2_32.lib")
 #include <winsock2.h>
 
-int socket::init() {
+int bot_socket::init() {
 	
+}
+
+int bot_socket::bindPeer(node *peer) {
+	
+}
+
+void bot_socket::close() {
+	WSAcleanup();
+	close(sock);
 }
 
 #endif

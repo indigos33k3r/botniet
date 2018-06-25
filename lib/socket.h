@@ -1,7 +1,7 @@
 #ifndef SOCK_H
 #define SOCK_H
 
-class socket {
+class bot_socket {
 	private:
 #ifdef __linux__
 	int sock, tcp_sock;
@@ -10,7 +10,7 @@ class socket {
 	struct sockaddr_in;
 	public:
 	int init();
-	int bindPeer(struct peerAddr);
+	int bindPeer(struct *peerAddr);
 	void close();
 };
 

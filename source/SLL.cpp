@@ -29,7 +29,7 @@ void SLL::createnode(struct sockaddr *peer, bool active) {
 	}
 }
 
-const char *SLL::display() {
+/*const char *SLL::display() {
 	node *temp = new node;
 	temp = head;
 	const char *ret = "";
@@ -51,7 +51,7 @@ const char *SLL::display() {
 		temp = temp->next;
 	}
 	return ret;
-}
+}*/
 
 void SLL::insert_start(struct sockaddr *peer, bool active) {
 	node *temp = new node;
