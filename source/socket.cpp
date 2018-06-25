@@ -25,7 +25,7 @@ int bot_socket::bindPeer(node *peer) {
 }
 
 void bot_socket::close() {
-	close(sock);
+	socket::close(sock);
 }
 
 #elif _WIN32

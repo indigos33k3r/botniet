@@ -1,6 +1,8 @@
 #ifndef SOCK_H
 #define SOCK_H
 
+#include "../lib/SLL.h"
+
 class bot_socket {
 	private:
 #ifdef __linux__
@@ -10,7 +12,7 @@ class bot_socket {
 	struct sockaddr_in;
 	public:
 	int init();
-	int bindPeer(struct *peerAddr);
+	int bindPeer(node *peer);
 	void close();
 };
 
